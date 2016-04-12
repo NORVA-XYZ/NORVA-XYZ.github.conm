@@ -1,24 +1,15 @@
-White Paper
-============
+---
+layout: default
+title: A guide to your digital life
+---
 
-White Paper is a jekyll theme for tech blogs. It is clean and simple with good semantic
-structure.
+<div class="listing">
+    {% for post in paginator.posts %}
+    <div class="post other link">
+      <h2><span class="mega-octicon octicon-flame" style="min-width: 32px;"></span><a href="/white-paper{{post.url}}">{{ post.title }}</a></h2>
+      <p class="post-date">{{ post.date | date_to_string }}</p>
 
-![white-paper image](https://i.cloudup.com/rmZjQ83vRh-2000x2000.png)
-
-## Usage:
-
-- Install Jekyll from here(http://jekyllrb.com/)
-- Fork the project.
-- Change the fields in _config.yml.
-- Change the links in header.html.
-
-Test the website live while editing the code:
-
-```sh
-jekyll server --watch
-```
-
-## Issues:
-
-Report issues or feature request [here](https://github.com/vinitkumar/white-paper/issues).
+      <p>{{ post.excerpt }}</p>
+    </div>
+    {% endfor %}
+</div>
